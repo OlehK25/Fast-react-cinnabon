@@ -147,10 +147,16 @@ export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
+  const orderPrice = getTotalCartPrice(store.getState());
+
   const order = {
     ...data,
     cart: JSON.parse(data.cart),
     priority: data.priority === "true",
+    orderPrice: +orderPrice.toFixed(2),
+    priorityPrice:
+      data.priority === "true" ? +(orderPrice * 0.2).toFixed(2) : 0,
+    status: "preparing",
   };
 
   const errors = {};
@@ -164,7 +170,7 @@ export async function action({ request }) {
   // DO Not overuse this pattern
   store.dispatch(clearCart());
 
-  return redirect(`/order/${newOrder.id}`);
+  return redirect(`/order/${newOrder}`);
 }
 
 export default CreateOrder;

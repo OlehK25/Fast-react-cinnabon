@@ -1,4 +1,5 @@
-const API_URL = "https://react-fast-pizza-api.onrender.com/api";
+const API_URL = "https://fast-react-cinnabon-api.onrender.com/api";
+// const API_URL = "http://localhost:5000/api";
 
 export async function getMenu() {
   const res = await fetch(`${API_URL}/menu`);
@@ -14,6 +15,7 @@ export async function getOrder(id) {
   if (!res.ok) throw Error(`Couldn't find order #${id}`);
 
   const { data } = await res.json();
+
   return data;
 }
 

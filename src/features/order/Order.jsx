@@ -23,7 +23,7 @@ function Order() {
   );
 
   const {
-    id,
+    orderId,
     status,
     priority,
     priorityPrice,
@@ -36,7 +36,7 @@ function Order() {
   return (
     <div className="space-y-8 px-4 py-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="text-xl font-semibold">Order #{id} status</h2>
+        <h2 className="text-xl font-semibold">Order #{orderId} status</h2>
 
         <div className="space-x-2">
           {priority && (
@@ -65,10 +65,10 @@ function Order() {
         {cart.map((item) => (
           <OrderItem
             item={item}
-            key={item.pizzaId}
+            key={item.cinnabonId}
             isLoadingIngredients={fetcher.state === "loading"}
             ingredients={
-              fetcher?.data?.find((el) => el.id === item.pizzaId)
+              fetcher?.data?.find((el) => el.id === item.cinnabonId)
                 ?.ingredients ?? []
             }
           />

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 function Button({ children, disabled, to, type, onClick }) {
   const base =
     "inline-block text-sm rounded-full " +
-    "bg-yellow-400 font-semibold uppercase " +
-    "tracking-wide text-stone-800 transition-colors " +
-    "duration-300 hover:bg-yellow-300 focus:bg-yellow-300 " +
-    "focus:outline-none focus:ring focus:ring-yellow-300 " +
+    "bg-slate-500 font-semibold uppercase " +
+    "tracking-wide text-stone-100 transition-colors " +
+    "duration-300 hover:bg-slate-400 focus:bg-slate-400 " +
+    "focus:outline-none focus:ring focus:ring-slate-400 " +
     "focus:ring-offset-2 disabled:cursor-not-allowed";
 
   const styles = {

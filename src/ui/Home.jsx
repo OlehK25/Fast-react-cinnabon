@@ -8,9 +8,10 @@ function Home() {
   return (
     <div className="my-10 px-4 text-center sm:my-16">
       <h1 className="mb-8  text-xl font-semibold md:text-3xl ">
-        The best cinnabon.
+        The best cinnabons
+        <img className="inline h-[45px] w-[45px]" src="/cinnabon.png" alt="" />
         <br />
-        <span className="text-yellow-500">
+        <span className="text-sky-600">
           Straight out of the oven, straight to you.
         </span>
       </h1>
